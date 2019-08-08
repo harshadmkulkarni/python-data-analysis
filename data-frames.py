@@ -35,5 +35,15 @@ master_list=list(zip(labels,cols))
 #print(master_list)
 
 data=dict(master_list)
-new_course_sales=pd.DataFrame(data)
-print(new_course_sales)
+df_new_course_sales=pd.DataFrame(data)
+print(df_new_course_sales)
+
+### DATAFRAME BROADCASTING is feature of NumPy & a great technique to quick-update new/existing column data ###
+df_new_course_sales['AUG_SALE_PRICE']='$1000'
+df_new_course_sales['SEP_SALE_PRICE']='$900'
+print(df_new_course_sales)
+
+#rename column labels for dataframe
+labels = ['COURSE_NAME', 'DAYS_OF_CLASS', 'ORIG_PRICE', '24HR_PRICE', '48HR_PRICE', '72HR_PRICE']
+df_new_course_sales.columns = labels
+print(df_new_course_sales)
